@@ -25,8 +25,14 @@
 *.la
 *.a
 *.lib
+*.dSYM
 
 # Executables
 *.exe
 *.out
 *.app
+auto
+
+# VSCode
+.vscode
+.vscode/*

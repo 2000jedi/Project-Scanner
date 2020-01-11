@@ -1,0 +1,5 @@
+<EPS>=\s
+<LITERAL_SELECT>=SELECT
+<LITERAL_FROM>=FROM
+<STRING>="[^"]*"
+<VAR>=[a-zA-Z]\w*
