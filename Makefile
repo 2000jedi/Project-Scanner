@@ -6,7 +6,7 @@ SRCS = scanner.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 auto: main.cpp $(OBJS)
-	$(CXX) $(CXXFLAGS) -O3 -o auto main.cpp $(OBJS)
+	$(CXX) $(CXXFLAGS) -o auto main.cpp $(OBJS)
 
 clean:
 	${RM} ${TARGET} ${OBJS}
