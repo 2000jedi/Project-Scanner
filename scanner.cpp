@@ -15,7 +15,7 @@ void scanner::initialize(std::string file) {
     std::string buf;
 
     while (std::getline(fp, buf)) {
-        ScanTable.push_back(std::pair<std::string, std::regex>(buf.substr(0, buf.find("=")), std::regex("^" + buf.substr(buf.find("=") + 1))));
+        ScanTable.push_back(std::pair<std::string, std::regex>(buf.substr(0, buf.find("=")), std::regex(buf.substr(buf.find("=") + 1))));
     }
 }
 
@@ -30,7 +30,7 @@ std::string scanner::scan(std::string orig) {
     while (iter != orig.end()) {
         match = false;
         for (std::pair<std::string, std::regex> kv : ScanTable) {
-            if (std::regex_search(iter, iter_end, search, kv.second)) {
+            if (std::regex_search(iter, iter_end, search, kv.second, std::regex_constants::match_continuous)) {
                 match = true;
 
                 if (kv.first == "EPS") {
